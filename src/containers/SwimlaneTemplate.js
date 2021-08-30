@@ -18,11 +18,20 @@ class SwimlaneTemplate extends SampleBase {
     this.template = this.rowTemplate;
   }
   rowTemplate(props) {
-    var src = 'src/kanban/images/' + props.keyField + '.png';
+    var src = `https://source.unsplash.com/random/25x25?sig=${Math.floor(
+      Math.random() * 1000
+    )}`;
     return (
       <div className="swimlane-template e-swimlane-template-table">
         <div className="e-swimlane-row-text">
-          <img src={src} alt={props.keyField} />
+          <img
+            src={src}
+            alt={props.keyField}
+            style={{
+              marginRight: '10px',
+              borderRadius: '50%',
+            }}
+          />
           <span>{props.textField}</span>
         </div>
       </div>
